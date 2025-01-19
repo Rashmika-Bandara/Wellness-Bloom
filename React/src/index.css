@@ -24,10 +24,10 @@ a{
 }
 
 .btn{
-    background: white;
+    
     color: black;
     padding: 14px 25px;
-    font-size: 50px;
+    font-size: 60px;
     border-radius: 50%;
     cursor: pointer;
     border: 0;

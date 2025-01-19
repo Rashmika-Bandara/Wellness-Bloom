@@ -1,0 +1,73 @@
+.hero {
+    text-align: center;
+    
+   
+  }
+  
+  .hero-text {
+    margin-bottom: 20px;
+  }
+  
+  .hero-explore {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-dot-play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+li{
+    margin-top: 10px;
+}
+  
+  .hero-dots {
+    
+    list-style: none;
+    padding: 0;
+    gap: 10px;
+    
+    
+    position: fixed;
+    right: 600px;
+  }
+  
+  .hero-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #9b0707; /* Default color */
+    cursor: pointer;
+  }
+  
+  .hero-dot.orange {
+    background-color: rgb(241, 244, 246); /* Active color */
+  }
+
+  .hero-text-center{
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto; /* Ensures content stays in the center */
+    line-height: 1.6; /* Improves readability with proper line spacing */
+    padding: 20px; /* Adds padding for a better layout */
+    background-color: rgba(207, 255, 252, 0.8); /* Slightly transparent background */
+    border-radius: 10px; /* Adds rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+
+  }
+  
+  .hero-text-center h1{
+    font-size: 40px;
+    font-weight: 600;
+  }
+
+  .hero-text-center p{
+    max-width: 700 px;
+    margin: 10px auto 20px;
+    line-height: 1.4;
+    font-size: 20px;
+  }
