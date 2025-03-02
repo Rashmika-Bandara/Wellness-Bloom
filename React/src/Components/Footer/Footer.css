@@ -1,0 +1,106 @@
+/* Ensure the footer stays at the bottom */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the app takes full viewport height */
+}
+
+.main-content {
+  flex: 1; /* Pushes footer to the bottom */
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #12a0b9;
+  color: white;
+  padding: 20px 0;
+  width: 100%;
+  text-align: center;
+  position: relative; /* Ensures it stays at the bottom */
+  bottom: 0;
+  z-index: 10;
+}
+
+/* Footer Container */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+}
+
+/* Footer Logo */
+.footer-logo span {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Footer Brands */
+.footer-brands {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.footer-brands span {
+  font-size: 16px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.brand-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Footer Navigation */
+.footer-nav {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.footer-nav a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #ff6f61;
+  text-decoration: underline;
+}
+
+/* Divider */
+.divider {
+  color: white;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+  }
+
+  .footer-nav {
+      flex-direction: column;
+      gap: 10px;
+  }
+}

@@ -1,40 +1,95 @@
-nav{
+/* Navbar Container */
+nav {
     width: 100%;
-    background: #cffffc;
-    color: #000ab0;
-    padding: 4px 0;
+    background: linear-gradient(to right, #000428, #004e92); /* Dark Blue Gradient */
+    color: white;
+    padding: 15px 0;
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 10;
-
+    z-index: 1000;
+    height: 70px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo{
-    width: 250px;
+/* Navbar Inner Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-nav ul li {
-    display: inline-block;
+/* Logo */
+.logo {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Navbar List */
+nav ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
     list-style: none;
-    margin: 5px 10px;
-    font-size: 25px;
-    font-style: bold;
-    
-
+    gap: 25px;
 }
 
-.btn{
-    background-color: #98FF98;
-    color: black;
-    padding: 10px 15px;
-    font-size: 20px;
-    border-radius: 25%;
-    cursor: pointer;
-    border: 10ox;
-    outline: 10px;
+/* Navbar Items */
+nav ul li {
+    font-size: 16px;
+    font-weight: bold;
+}
 
+/* Navbar Links */
+nav ul li a, .nav-btn {
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s ease, transform 0.2s;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+/* Hover Effect */
+nav ul li a:hover, .nav-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ff6f61;
+    transform: scale(1.05);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .logo {
+        width: 130px;
+    }
 }

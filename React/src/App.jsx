@@ -1,31 +1,51 @@
-import React, { useState } from 'react'
-import Navbar from './Components/Navbar/Navbar'
-import Background from './Components/Background/Background'
-import Hero from './Components/Hero/Hero'
+import React, { useRef } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import Navbar from './Components/Navbar/Navbar';
+import Hero from './Components/Hero/Hero';
+import About from './Components/About/About';
+import Footer from './Components/Footer/Footer';
+import Login from './Components/Login/Login';
 
 const App = () => {
+  return (
+    <Router>
+      <MainContent />
+    </Router>
+  );
+};
 
-  let heroData = [
-    {text1:"Image 1", text2:"Image 2"},
-    {text1:"Image 3", text2:"Image 4"},
-    {text1:"Image 5", text2:"Image 6"},
-  ]
-  const[heroCount,setHeroCount] = useState(1);
-  const[playStatus,setPlayStatus] = useState(false);
+// Separate component to manage layout (Navbar visibility)
+const MainContent = () => {
+  const aboutRef = useRef(null);
+  const location = useLocation(); // Get current route
+
+  // Function to scroll to the About section
+  const scrollToSection = (ref) => {
+    if (ref && ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
-    <div>
-      <Navbar/>
-      <Background playStatus = {playStatus} heroCount = {heroCount}/>
-      <Hero 
-        setPlayStatus = {setPlayStatus}
-        heroData = {heroData[heroCount]}
-        heroCount = {heroCount}
-        setHeroCount = {setHeroCount}
-        playStatus = {playStatus}
-      />
-    </div>
-  )
-}
+    <>
+      {/* Hide Navbar only on the login page */}
+      {location.pathname !== "/login" && <Navbar scrollToSection={scrollToSection} aboutRef={aboutRef} />}
+      
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Hero />
+              <About ref={aboutRef} />
+              <Footer />
+            </>
+          }
+        />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </>
+  );
+};
 
-export default App
+export default App;

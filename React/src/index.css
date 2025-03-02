@@ -1,36 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
-
-*{
+/* Global Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Outfit", serif;
+    font-family: 'Outfit', sans-serif; /* Use Outfit font globally */
 }
 
-body{
-    background: white;
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;  /* Default font for body text */
+    font-size: 16px;                 /* Default font size */
+    margin: 0;                       /* Remove margin around body */
+    padding: 20px;                   /* Padding for content */
+    background-color: #fff;         /* White background color */
+    color: #000;                    /* Black text color */
+    line-height: 1.5;               /* Improved readability */
 }
 
-a{ 
-    text-decoration: none;
-    color: black;
-    line-height: 1;
-    cursor: pointer;
+/* Link Styles */
+a { 
+    text-decoration: none;          /* Removes underline from links */
+    color: inherit;                 /* Inherits color from surrounding text */
+    cursor: pointer;               /* Pointer cursor on hover */
 }
 
-.container{
-    padding-left: 10% ;
-    padding-right: 10%;
+/* Container Styles */
+.container {
+    padding-left: 10%; 
+    padding-right: 10%;             /* Adds some padding to the container */
 }
 
-.btn{
-    
-    color: black;
-    padding: 14px 25px;
-    font-size: 60px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 0;
-    outline: 0;
+/* Button Styles */
+.btn {
+    color: black;                  /* Black text color for the button */
+    padding: 14px 25px;             /* Button padding */
+    font-size: 20px;                /* Reasonable font size */
+    border-radius: 50%;             /* Circular button shape */
+    cursor: pointer;               /* Pointer cursor on hover */
+    border: none;                   /* No border for the button */
+    outline: none;                  /* Remove outline when focused */
+    background-color: transparent;  /* Transparent background */
+    transition: background-color 0.3s, transform 0.3s;  /* Smooth transitions for hover effects */
+}
 
+.btn:hover {
+    background-color: #f1f1f1;         /* Slightly gray background on hover */
+    transform: scale(1.05);             /* Slightly enlarge the button on hover */
 }
